@@ -19,12 +19,12 @@ class MetaDataCK extends TestCase
             //$response->AssertStatus(200);
         }
     }
-    public function test_lang_es()
+    public function test_lang_en()
     {
         for($i=1;$i<=7;$i++){
             $response = $this->get('/jugar'.'/'.$i);
             $pagina = $response->getContent(); //El html
-            $this->assertEquals(1,substr_count($pagina, '<html lang="es">'));
+            $this->assertEquals(1,substr_count($pagina, '<html lang="en">'));
             //print_r($pagina);
             //$response->AssertStatus(200);
         }
