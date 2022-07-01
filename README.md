@@ -8,8 +8,8 @@ First, you have to clone the repo like ever. <br>
 Then, you have to start a ddev project in this folder with (CMD):
 **ddev config**
 And it shows a page that requires a name, leave it in blank, then when it asks for the public root you have to type leave it blank And Yes.<br>
-After that, with **ddev start** you can run the program. You have to copy the .env.example file in another one called .env, then you have to enter ssh with **ddev ssh** and:<br><br>
-**composer update
+After that, with **ddev start** you can run the program.<br> You have to copy the .env.example file in another one called .env (here you can write your credentials), then you have to enter via ssh with **ddev ssh** and:<br><br>
+**composer update<br>
 php artisan key:generate**<br><br>
 Now, you can exit, and the project will be able to start with only **ddev start** and stop with **ddev poweroff**<br><br><br>
 
