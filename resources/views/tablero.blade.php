@@ -27,21 +27,36 @@
     <body class="antialiased">
         <div class="relative flex flex-col items-top justify-center min-h-screen bg-gray-800 dark:bg-cyan-900 sm:items-center sm:pt-0">
 
-          <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
-              @for ($columna = 1; $columna <= 7; $columna++)
-                <a href="/jugar/{{ $secuencia_anterior }}{{ $columna }}" class="hover:bg-{{ $color_siguiente }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
-              @endfor
-          </div>
-
-          <div class="grid grid-gap-4 grid-cols-7 grid-rows-6 px-1 pb-1 border-l-4 border-r-4 border-b-4 border-green-800 shadow-lg shadow-emerald-900/50 ">
-
-            @for ($fila = 0; $fila < 6; $fila++)
-              @for ($columna = 0; $columna < 7; $columna++)
-                <div class="bg-{{ $tablero[$columna][$fila] }} text-center mx-1 mt-1 w-24 h-24"></div>
-              @endfor
-            @endfor
-          </div>
-
+            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
+                @for ($i = 0; $i <= 6; $columna++)
+                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $colores[$i] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+                @endfor
+            </div>
+            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
+                @for ($i = 7; $i <= 12; $columna++)
+                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $colores[$i] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+                @endfor
+            </div>
+            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
+                @for ($i = 13; $i <= 18; $columna++)
+                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $colores[$i] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+                @endfor
+            </div>
+            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
+                @for ($i = 19; $i <= 24; $columna++)
+                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $colores[$i] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+                @endfor
+            </div>
+            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
+                @for ($i = 25; $i <= 30; $columna++)
+                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $colores[$i] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+                @endfor
+            </div>
+            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
+                @for ($i = 31; $i <= 36; $columna++)
+                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $colores[$i] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+                @endfor
+            </div>
 
         </div>
 

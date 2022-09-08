@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Tablero;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+$tablero = new Tablero();
+
+//Route::get('/jugar/{secuencia}/tirarficha/{numero}', $tablero->tirarFicha($numero));
+
+Route::get('/jugar', $tablero->getTablero());
+
+/*
 Route::get('/jugar/{secuencia}', function ($secuencia) {
   $secuencia_anterior = $secuencia;
   $secuencia = str_split($secuencia);
@@ -51,3 +59,4 @@ Route::get('/jugar/{secuencia}', function ($secuencia) {
     'color_siguiente' => $color_siguiente,
   ]);
 });
+*/
