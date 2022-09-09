@@ -13,16 +13,28 @@ use App\Tablero;
 | contains the "web" middleware group. Now create something great!
 |
 */
+$tablero = new Tablero();
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-$tablero = new Tablero();
+Route::prefix('jugar')->group(function (){
+  $tablero = new Tablero();
+  Route::get('/', function(){
+    return $tablero->getTablero();
+  });
+});
+
+Route::get('/jugar', function(){
+    $tablero = new Tablero();
+    return $tablero->getTablero();
+});
+
 
 //Route::get('/jugar/{secuencia}/tirarficha/{numero}', $tablero->tirarFicha($numero));
 
-Route::get('/jugar', $tablero->getTablero());
+
 
 /*
 Route::get('/jugar/{secuencia}', function ($secuencia) {

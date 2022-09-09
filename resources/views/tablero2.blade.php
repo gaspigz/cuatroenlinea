@@ -18,6 +18,14 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+            .grilla {
+                height: 80vh;
+                width: 80vw;
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto auto;
+                grid-template-rows: auto auto auto auto auto auto;
+                grid-gap: 1px;
+            }
         </style>
 
         <!-- Tailwind -->
@@ -26,44 +34,37 @@
     </head>
     <body class="antialiased">
         <div class="relative flex flex-col items-top justify-center min-h-screen bg-gray-800 dark:bg-cyan-900 sm:items-center sm:pt-0">
-                
-            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
-                @for ($i = 0; $i <= 6; $columna++)
-                  {{ $color_i = $tablero[$i] }}
-                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $color_i }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
-                @endfor
-            </div>
-            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
-                @for ($i = 7; $i <= 12; $columna++)
-                {{ $color_i = $tablero[$i] }}
-                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $color_i }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
-                @endfor
-            </div>
-            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
-                @for ($i = 13; $i <= 18; $columna++)
-                {{ $color_i = $tablero[$i] }}
-                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $color_i }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
-                @endfor
-            </div>
-            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
-                @for ($i = 19; $i <= 24; $columna++)
-                {{ $color_i = $tablero[$i] }}
-                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $color_i }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
-                @endfor
-            </div>
-            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
-                @for ($i = 25; $i <= 30; $columna++)
-                {{ $color_i = $tablero[$i] }}
-                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $color_i }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
-                @endfor
-            </div>
-            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
-                @for ($i = 31; $i <= 36; $columna++)
-                {{ $color_i = $tablero[$i] }}
-                  <a href="/jugar/{{ $secuencia }}/tirarficha/{{ $numero }}" class="hover:bg-{{ $color_i }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
-                @endfor
-            </div>
+            @php 
 
+                $i = 0;
+            @endphp
+            
+            <div class="grid grid-gap-4 grid-cols-7 grid-rows-1 px-1 pb-1">
+              @for ($columna = 0; $columna < 7; $columna++)
+                <a href="/jugar/{{ $columna }}" class="bg-{{ $tablero[$columna] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+              @endfor
+              @for ($columna = 7; $columna < 14; $columna++)
+                <a href="/jugar/{{ ($columna-(7)) }}" class="bg-{{ $tablero[$columna] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+              @endfor
+              @for ($columna = 14; $columna < 21; $columna++)
+                <a href="/jugar/{{ ($columna-(14)) }}" class="bg-{{ $tablero[$columna] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+              @endfor
+              @for ($columna = 21; $columna < 28; $columna++)
+                <a href="/jugar/{{ ($columna-(21)) }}" class="bg-{{ $tablero[$columna] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+              @endfor
+              @for ($columna = 28; $columna < 35; $columna++)
+                <a href="/jugar/{{ ($columna-(28)) }}" class="bg-{{ $tablero[$columna] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+              @endfor
+              @for ($columna = 35; $columna < 42; $columna++)
+                <a href="/jugar/{{ ($columna-(35)) }}" class="bg-{{ $tablero[$columna] }} text-center mx-1 mt-1 w-24 h-24 hover:border hover:border-gray-800 hover:border-dashed hover:border-4 rounded-full hover:animate-spin"></a>
+              @endfor
+            </div>
+            
+            
+            @php
+                $i++;
+            @endphp
+            
         </div>
 
     </body>
