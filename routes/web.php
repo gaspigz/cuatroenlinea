@@ -19,17 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('jugar')->group(function (){
-  $tablero = new Tablero();
+Route::prefix('/jugar')->group(function (){
+  
   Route::get('/', function(){
-    return $tablero->getTablero();
-  });
-});
-
-Route::get('/jugar', function(){
     $tablero = new Tablero();
     return $tablero->getTablero();
+  });
+
+  Route::get('/{numero}', function ($numero) {
+    return $tablero->tirarFicha($numero);
+  });
+  
 });
+
 
 
 //Route::get('/jugar/{secuencia}/tirarficha/{numero}', $tablero->tirarFicha($numero));
